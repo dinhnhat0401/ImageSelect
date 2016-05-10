@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8422B0B01CE193A10098663F /* QBAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8422B0AF1CE193A10098663F /* QBAssetCell.m */; };
+		8422B0B31CE1A50E0098663F /* QBImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8422B0B21CE1A50E0098663F /* QBImagePickerController.m */; };
+		8422B0B51CE1BF860098663F /* photo4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8422B0B41CE1BF860098663F /* photo4.jpg */; };
+		8455F7981CE1FCFD000216CB /* QBCheckmarkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8455F7971CE1FCFD000216CB /* QBCheckmarkView.m */; };
 		84C231BF1CE09B4100C1BB7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C231BE1CE09B4100C1BB7B /* main.m */; };
 		84C231C21CE09B4100C1BB7B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C231C11CE09B4100C1BB7B /* AppDelegate.m */; };
 		84C231C51CE09B4100C1BB7B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C231C41CE09B4100C1BB7B /* ViewController.m */; };
@@ -15,6 +19,7 @@
 		84C231CD1CE09B4100C1BB7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C231CB1CE09B4100C1BB7B /* LaunchScreen.storyboard */; };
 		84C231D81CE09B4100C1BB7B /* ImageSelectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C231D71CE09B4100C1BB7B /* ImageSelectTests.m */; };
 		84C231E31CE09B4100C1BB7B /* ImageSelectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C231E21CE09B4100C1BB7B /* ImageSelectUITests.m */; };
+		84C231F41CE0A99500C1BB7B /* MB050AssetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C231F31CE0A99500C1BB7B /* MB050AssetsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8422B0AE1CE193A10098663F /* QBAssetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBAssetCell.h; sourceTree = "<group>"; };
+		8422B0AF1CE193A10098663F /* QBAssetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBAssetCell.m; sourceTree = "<group>"; };
+		8422B0B11CE1A50E0098663F /* QBImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBImagePickerController.h; sourceTree = "<group>"; };
+		8422B0B21CE1A50E0098663F /* QBImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBImagePickerController.m; sourceTree = "<group>"; };
+		8422B0B41CE1BF860098663F /* photo4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo4.jpg; sourceTree = "<group>"; };
+		8455F7961CE1FCFD000216CB /* QBCheckmarkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBCheckmarkView.h; sourceTree = "<group>"; };
+		8455F7971CE1FCFD000216CB /* QBCheckmarkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBCheckmarkView.m; sourceTree = "<group>"; };
 		84C231BA1CE09B4100C1BB7B /* ImageSelect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageSelect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C231BE1CE09B4100C1BB7B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84C231C01CE09B4100C1BB7B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +63,8 @@
 		84C231DE1CE09B4100C1BB7B /* ImageSelectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageSelectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C231E21CE09B4100C1BB7B /* ImageSelectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageSelectUITests.m; sourceTree = "<group>"; };
 		84C231E41CE09B4100C1BB7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84C231F21CE0A99500C1BB7B /* MB050AssetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MB050AssetsViewController.h; sourceTree = "<group>"; };
+		84C231F31CE0A99500C1BB7B /* MB050AssetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MB050AssetsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +115,18 @@
 		84C231BC1CE09B4100C1BB7B /* ImageSelect */ = {
 			isa = PBXGroup;
 			children = (
+				8455F7961CE1FCFD000216CB /* QBCheckmarkView.h */,
+				8455F7971CE1FCFD000216CB /* QBCheckmarkView.m */,
+				8422B0AE1CE193A10098663F /* QBAssetCell.h */,
+				8422B0AF1CE193A10098663F /* QBAssetCell.m */,
 				84C231C01CE09B4100C1BB7B /* AppDelegate.h */,
+				8422B0B11CE1A50E0098663F /* QBImagePickerController.h */,
+				8422B0B21CE1A50E0098663F /* QBImagePickerController.m */,
 				84C231C11CE09B4100C1BB7B /* AppDelegate.m */,
 				84C231C31CE09B4100C1BB7B /* ViewController.h */,
 				84C231C41CE09B4100C1BB7B /* ViewController.m */,
+				84C231F21CE0A99500C1BB7B /* MB050AssetsViewController.h */,
+				84C231F31CE0A99500C1BB7B /* MB050AssetsViewController.m */,
 				84C231C61CE09B4100C1BB7B /* Main.storyboard */,
 				84C231C91CE09B4100C1BB7B /* Assets.xcassets */,
 				84C231CB1CE09B4100C1BB7B /* LaunchScreen.storyboard */,
@@ -117,6 +139,7 @@
 		84C231BD1CE09B4100C1BB7B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8422B0B41CE1BF860098663F /* photo4.jpg */,
 				84C231BE1CE09B4100C1BB7B /* main.m */,
 			);
 			name = "Supporting Files";
@@ -246,6 +269,7 @@
 				84C231CD1CE09B4100C1BB7B /* LaunchScreen.storyboard in Resources */,
 				84C231CA1CE09B4100C1BB7B /* Assets.xcassets in Resources */,
 				84C231C81CE09B4100C1BB7B /* Main.storyboard in Resources */,
+				8422B0B51CE1BF860098663F /* photo4.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,8 +294,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8422B0B01CE193A10098663F /* QBAssetCell.m in Sources */,
 				84C231C51CE09B4100C1BB7B /* ViewController.m in Sources */,
+				8455F7981CE1FCFD000216CB /* QBCheckmarkView.m in Sources */,
+				8422B0B31CE1A50E0098663F /* QBImagePickerController.m in Sources */,
 				84C231C21CE09B4100C1BB7B /* AppDelegate.m in Sources */,
+				84C231F41CE0A99500C1BB7B /* MB050AssetsViewController.m in Sources */,
 				84C231BF1CE09B4100C1BB7B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +444,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ImageSelect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sample.ImageSelect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -427,6 +456,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ImageSelect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sample.ImageSelect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -498,6 +528,7 @@
 				84C231E91CE09B4100C1BB7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84C231EA1CE09B4100C1BB7B /* Build configuration list for PBXNativeTarget "ImageSelectTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +537,7 @@
 				84C231EC1CE09B4100C1BB7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84C231ED1CE09B4100C1BB7B /* Build configuration list for PBXNativeTarget "ImageSelectUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +546,7 @@
 				84C231EF1CE09B4100C1BB7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

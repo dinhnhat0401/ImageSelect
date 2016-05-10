@@ -31,7 +31,7 @@
     imagePickerController.mediaType = QBImagePickerMediaTypeAny;
     imagePickerController.showsNumberOfSelectedAssets = YES;
     
-    imagePickerController.maximumNumberOfSelection = 6;
+    imagePickerController.maximumNumberOfSelection = 5;
     
 
     MB050AssetsViewController *assetsVC = [[MB050AssetsViewController alloc] initWithImagePicker:imagePickerController];

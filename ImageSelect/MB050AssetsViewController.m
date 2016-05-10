@@ -11,7 +11,7 @@
 #import "QBImagePickerController.h"
 #import <Photos/Photos.h>
 
-@interface MB050AssetsViewController()<PHPhotoLibraryChangeObserver, UICollectionViewDelegateFlowLayout>
+@interface MB050AssetsViewController()<PHPhotoLibraryChangeObserver, UICollectionViewDelegateFlowLayout, CheckmarkViewDelegate>
 @property (nonatomic, strong) UIBarButtonItem *doneButton;
 
 @property (nonatomic, strong) PHFetchResult *fetchResult;
@@ -40,10 +40,13 @@ static NSInteger interItemSpacing = 2;
     if (self = [super initWithCollectionViewLayout:[UICollectionViewFlowLayout new]]) {
         [self calculateAssetGridThumbnailSize];
         self.imagePickerController = imagePicker;
+
         UICollectionViewFlowLayout* flowLayout = [[UICollectionViewFlowLayout alloc]init];
         flowLayout.itemSize = AssetGridThumbnailSize;
         [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
         self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:flowLayout];
+        self.collectionView.delegate = self;
+        self.collectionView.dataSource = self;
     }
     return self;
 }
@@ -131,6 +134,11 @@ static NSInteger interItemSpacing = 2;
         
         cell.backgroundColor = [UIColor clearColor];
     }
+    UITapGestureRecognizer *singleFingerTap =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(onCheckmarkViewTaped:)];
+    [cell.checkMarkView addGestureRecognizer:singleFingerTap];
+
     
 //    UIImage *img = [UIImage imageNamed:@"photo4.jpg"];
 //    cell.imageView.image = img;
@@ -139,7 +147,7 @@ static NSInteger interItemSpacing = 2;
     // Image
     PHAsset *asset = self.fetchResult[indexPath.item];
     
-    CGSize itemSize = [(UICollectionViewFlowLayout *)collectionView.collectionViewLayout itemSize];
+//    CGSize itemSize = [(UICollectionViewFlowLayout *)collectionView.collectionViewLayout itemSize];
 //    CGSize targetSize = CGSizeScale(itemSize, self.traitCollection.displayScale);
 
     [[PHImageManager defaultManager] requestImageForAsset:asset
@@ -150,9 +158,7 @@ static NSInteger interItemSpacing = 2;
                                   
                                   if (cell.tag == indexPath.item) {
                                       cell.imageView.image = result;
-                                      NSLog(@"da set duoc");
                                   }
-                                      NSLog(@"da set duoc xxxx");
                               }];
     
     // Video indicator
@@ -188,16 +194,17 @@ static NSInteger interItemSpacing = 2;
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([self.imagePickerController.delegate respondsToSelector:@selector(qb_imagePickerController:shouldSelectAsset:)]) {
-        PHAsset *asset = self.fetchResult[indexPath.item];
-        return [self.imagePickerController.delegate qb_imagePickerController:self.imagePickerController shouldSelectAsset:asset];
-    }
-    
-    if ([self isAutoDeselectEnabled]) {
-        return YES;
-    }
-    
-    return ![self isMaximumSelectionLimitReached];
+//    if ([self.imagePickerController.delegate respondsToSelector:@selector(qb_imagePickerController:shouldSelectAsset:)]) {
+//        PHAsset *asset = self.fetchResult[indexPath.item];
+//        return [self.imagePickerController.delegate qb_imagePickerController:self.imagePickerController shouldSelectAsset:asset];
+//    }
+//    
+//    if ([self isAutoDeselectEnabled]) {
+//        return YES;
+//    }
+//
+    return YES;
+//    return ![self isMaximumSelectionLimitReached];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -218,7 +225,7 @@ static NSInteger interItemSpacing = 2;
         }
         
         // Add asset to set
-        [selectedAssets addObject:asset];
+    [selectedAssets addObject:asset];
         
         self.lastSelectedItemIndexPath = indexPath;
         
@@ -232,9 +239,6 @@ static NSInteger interItemSpacing = 2;
                 [self.navigationController setToolbarHidden:NO animated:YES];
             }
         }
-    
-    QBAssetCell *cell = (QBAssetCell*)[collectionView cellForItemAtIndexPath:indexPath];
-    [cell.checkMarkView changeColorOfCheckMark];
     
     if ([imagePickerController.delegate respondsToSelector:@selector(qb_imagePickerController:didSelectAsset:)]) {
         [imagePickerController.delegate qb_imagePickerController:imagePickerController didSelectAsset:asset];
@@ -312,4 +316,15 @@ static NSInteger interItemSpacing = 2;
     return _imageManager;
 }
 
+#pragma mark - Checkmark delegate
+- (void)onCheckmarkViewChange:(BOOL)isSelected {
+    [self.collectionView reloadData];
+}
+
+- (void)onCheckmarkViewTaped:(id)sender {
+    UIView *checkMarkView = (UIView*)sender;
+    NSLog(@"check mark tapped %ld", (long)checkMarkView.tag);
+//    QBAssetCell *cell = [self.collectionView cellForItemAtIndexPath:]
+//        [cell.checkMarkView changeColorOfCheckMark];
+}
 @end

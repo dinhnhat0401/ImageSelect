@@ -16,10 +16,10 @@
 @implementation QBAssetCell
 @synthesize imageView = _imageView;
 @synthesize checkMarkView = _checkMarkView;
-- (void)setSelected:(BOOL)selected
-{
-    [super setSelected:selected];
-}
+//- (void)setSelected:(BOOL)selected
+//{
+//    [super setSelected:selected];
+//}
 
 #pragma mark - Cell
 

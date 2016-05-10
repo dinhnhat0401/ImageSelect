@@ -10,6 +10,8 @@
 
 @implementation QBCheckmarkView
 @synthesize isSelected = _isSelected;
+@synthesize delegate = _delegate;
+@synthesize itemTag = _itemTag;
 - (id)init
 {
     if (self = [super init]) {
@@ -34,20 +36,6 @@
     return self;
 }
 
-- (void)setColorOfCheckMark:(BOOL)flag {
-    if (flag) {
-        self.bodyColor = [UIColor greenColor];
-    } else {
-        self.bodyColor = [UIColor grayColor];
-    }
-    [self setNeedsDisplay];
-}
-
-- (void)changeColorOfCheckMark {
-    [self setColorOfCheckMark:_isSelected];
-    _isSelected = !_isSelected;
-}
-
 - (void)drawRect:(CGRect)rect
 {
     // Border
@@ -68,6 +56,22 @@
     
     [self.checkmarkColor setStroke];
     [checkmarkPath stroke];
+}
+
+#pragma mark - private 
+- (void)setColorOfCheckMark:(BOOL)flag {
+    if (flag) {
+        self.bodyColor = [UIColor greenColor];
+    } else {
+        self.bodyColor = [UIColor grayColor];
+    }
+    [self setNeedsDisplay];
+}
+
+- (void)changeColorOfCheckMark {
+    _isSelected = !_isSelected;
+    [self setColorOfCheckMark:_isSelected];
+    [_delegate onCheckmarkViewChange:_isSelected];
 }
 
 @end
